@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Enemy : MonoBehaviour
@@ -11,7 +12,8 @@ public class Enemy : MonoBehaviour
     public List<Transform> points;
     public int nextPoint;
     int pointChange = 1;
-    public float speed = 4;
+    public float speed = 2;
+    public string sceneName;
 
     private void Reset()
     {
@@ -78,9 +80,10 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if(collision.gameObject.CompareTag("Player"))
         {
-            FindObjectOfType<HealthBar>().LoseHealth(15);
+            Debug.Log("SceneChange " + sceneName);
+            SceneManager.LoadScene(sceneName);
         }
     }
 
