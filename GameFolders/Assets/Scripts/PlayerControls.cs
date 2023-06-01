@@ -26,7 +26,6 @@ public class PlayerControls : MonoBehaviour
     //Public Fields
     public float speed = 4;
     public float jumpForce = 11;
-    public StarManager stars;
     
     //Attack
     [SerializeField] GameObject AttackPoint;
@@ -37,7 +36,6 @@ public class PlayerControls : MonoBehaviour
     //Audio
     public AudioSource jumpSound;
     public AudioSource attackSound;
-    public AudioSource collectSound;
     
     void Awake()
     {
@@ -68,7 +66,7 @@ public class PlayerControls : MonoBehaviour
             isRunning = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftShift) && !isAttacking)
+        if(Input.GetKeyDown("1") && !isAttacking)
         {
             StartCoroutine(attack());
             // isAttacking = true; 
@@ -212,30 +210,6 @@ public class PlayerControls : MonoBehaviour
         isAttacking = true;
         yield return new WaitForSeconds(0.6f);
         isAttacking = false;
-    }
-
-    void OnTriggerEnter2D (Collider2D other)
-    {
-        if(other.gameObject.CompareTag("Star"))
-        {
-            collectSound.Play();
-            Destroy(other.gameObject);
-            stars.starCount++;
-        }
-
-        if(other.gameObject.CompareTag("Tunnel"))
-        {
-            Debug.Log("Collide with tunnel");
-            if(stars.starCount < 17)
-            {
-                Debug.Log("Not enough stars");
-                FindObjectOfType<LevelManager>().NotEnoughStars();
-            }
-            else
-            {
-                FindObjectOfType<LevelManager>().EnterTunnel();
-            }
-        }
     }
 
 }
