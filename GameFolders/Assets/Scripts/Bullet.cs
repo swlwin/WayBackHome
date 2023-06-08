@@ -33,4 +33,19 @@ public class Bullet : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemies"))
+        {
+            Debug.Log("Boss takes damage from bullet");
+            FindObjectOfType<EnemyHealthBar>().LoseHealth(5);
+            Destroy(this.gameObject);
+        }
+
+        if(collision.gameObject.CompareTag("Ground"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

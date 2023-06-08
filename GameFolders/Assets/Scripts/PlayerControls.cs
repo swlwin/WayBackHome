@@ -202,7 +202,7 @@ public class PlayerControls : MonoBehaviour
         {
             if(enemy.CompareTag("Enemies"))
             {
-                Destroy(enemy.gameObject);
+                FindObjectOfType<EnemyHealthBar>().LoseHealth(15);
             }
         }
         anim.SetTrigger("Attack");
