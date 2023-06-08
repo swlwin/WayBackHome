@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Enemies
   - Star
-  - Tunnel
+  - Enemy
   layers:
   - Default
   - TransparentFX

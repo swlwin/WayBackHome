@@ -14,6 +14,9 @@ public class Enemy : MonoBehaviour
     int pointChange = 1;
     public float speed = 2;
     public string sceneName;
+    public float timeLeft = 1f;
+    public PlayerTDMove playerMovement;
+    bool countdown = false;
 
     private void Reset()
     {
@@ -45,7 +48,15 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        MoveToNextPoint();
+        if(!countdown)
+        {
+            MoveToNextPoint();
+        }
+        else
+        {
+            CountDown();
+        }
+        
     }
 
     void MoveToNextPoint()
@@ -78,12 +89,22 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void CountDown()
+    {
+        timeLeft -= Time.deltaTime;
+        playerMovement.enabled = false;
+        if (timeLeft < 0)
+        {
+            playerMovement.enabled = true;
+            SceneManager.LoadScene(sceneName);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("SceneChange " + sceneName);
-            SceneManager.LoadScene(sceneName);
+            countdown = true;
         }
     }
 

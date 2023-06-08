@@ -2,6 +2,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
@@ -14,13 +15,7 @@ public class HealthBar : MonoBehaviour
         fillBar.fillAmount = health/100;
         if(health<=0)
         {
-            if(FindObjectOfType<Life>().livesCount>0)
-            {
-                ResetHealth();
-                FindObjectOfType<Life>().LoseLife();
-            }
-            else
-                return;
+            SceneManager.LoadScene("PlayerDefeated");
         }
     }
 

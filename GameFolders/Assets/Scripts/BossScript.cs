@@ -19,7 +19,7 @@ public class BossScript : MonoBehaviour
     {
         alive = true;
         speed = 2.0f;
-        range = 4.0f;
+        // range = 4.0f;
         cooldown = 2.5f;
         isFlipped = false;
         boss = GetComponent<Rigidbody2D>();
@@ -63,6 +63,7 @@ public class BossScript : MonoBehaviour
                     animator.SetBool("attacking", true);
                     Debug.Log("Attacked");
                     timer = 0;
+                    FindObjectOfType<HealthBar>().LoseHealth(15);
                 }
             }
             else
@@ -71,5 +72,15 @@ public class BossScript : MonoBehaviour
             }
         }
         timer += Time.deltaTime;
+    }
+
+    // NOTE: For collision damage, a box collider needs to be added to boss and isTrigger needs to be turned on
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player takes enemy collision damage");
+            FindObjectOfType<HealthBar>().LoseHealth(15);
+        }
     }
 }

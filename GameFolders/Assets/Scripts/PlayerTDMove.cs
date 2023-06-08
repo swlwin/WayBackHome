@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class PlayerTDMove : MonoBehaviour
 {
-    public float velocity = 5f;
+    public float velocity = 4f;
 
     public Rigidbody2D rb;
     Vector2 movement;
     public Animator anim;
+    public AudioSource sceneMusic;
+    public GameObject alertPopup;
+
+    void Start()
+    {
+        sceneMusic.Play();
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,4 +32,21 @@ public class PlayerTDMove : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * velocity * Time.fixedDeltaTime);
     }
+
+    void closealert()
+    {
+        alertPopup.SetActive(false);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            alertPopup.SetActive(true);
+            Invoke("closealert", 2f);
+           
+        }
+            
+    }
+
 }
