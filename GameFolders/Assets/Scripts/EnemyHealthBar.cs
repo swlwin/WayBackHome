@@ -2,6 +2,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealthBar : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class EnemyHealthBar : MonoBehaviour
         fillBar.fillAmount = health/100;
         if(health<=0)
         {
-            // TODO: Player wins
+            SceneManager.LoadScene("BossDefeated");
         }
     }
 
