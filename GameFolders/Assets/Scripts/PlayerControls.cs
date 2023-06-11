@@ -119,7 +119,6 @@ public class PlayerControls : MonoBehaviour
         float xspeed = direction * speed;
         if(transform.position.y < -11)
         {
-            FindObjectOfType<Life>().LoseLife();
             FindObjectOfType<HealthBar>().ResetHealth();
             transform.position = new Vector3(-72.74f,0f,0f);
         }
