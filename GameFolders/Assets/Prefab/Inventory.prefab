@@ -276,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 4869668686683384768, guid: 441457e3b0bfa3e44aca4263d0ef3dcd, type: 3}
   contentPanel: {fileID: 4570508136538713705}
+  itemDesc: {fileID: 664136130455540785}
 --- !u!1 &4570508135807230720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1120,7 @@ GameObject:
   - component: {fileID: 4570508136519607845}
   - component: {fileID: 4570508136519607844}
   - component: {fileID: 4570508136519607847}
+  - component: {fileID: 664136130455540785}
   - component: {fileID: 4570508136519607846}
   m_Layer: 5
   m_Name: Info
@@ -1213,6 +1215,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &664136130455540785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4570508136519607842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07dc67dab32a174499f1f638b21d967f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemImage: {fileID: 4570508136248810885}
+  itemName: {fileID: 4570508135766979524}
+  description: {fileID: 4570508136152711440}
 --- !u!114 &4570508136519607846
 MonoBehaviour:
   m_ObjectHideFlags: 0
