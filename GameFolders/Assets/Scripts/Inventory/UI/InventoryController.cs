@@ -5,14 +5,67 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
     [SerializeField] private InventoryPage inventoryPage;
-    public int inventorySize = 8;
+    // public int inventorySize = 8;
 
     [SerializeField] private InventoryObject inventoryData;
 
+    public List<InventoryItem> initialItem = new List<InventoryItem>();
+
     void Start()
     {
-        InitInventoryPage();
+        PrepareUI();
+        PrepareInventoryData();
+
+        // InitInventoryPage();
         // inventoryData.Initialize();
+    }
+
+    private void PrepareUI()
+    {
+        inventoryPage.InitializeInventoryUI(inventoryData.Size);
+        inventoryPage.OnDescriptionReq += HandleDescriptionReq;
+        inventoryPage.OnItemActionReq += HandleItemActionReq;
+    }
+
+    private void PrepareInventoryData()
+    {
+        inventoryData.Initialize();
+        inventoryData.OnInventoryUpdated += UpdateInventoryUI;
+        foreach (InventoryItem item in initialItem)
+        {
+            if (item.isEmpty)
+                continue;
+            inventoryData.AddItem(item);
+        }
+    }
+
+    private void HandleItemActionReq(int itemIndex)
+    {
+        InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+        if (inventoryItem.isEmpty)
+            return;
+
+        IItemAction itemAction = inventoryItem.item as IItemAction;
+        if(itemAction != null)
+        {
+            itemAction.PerformAction(gameObject);
+        }
+
+        IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
+        if (destroyableItem != null)
+        {
+            inventoryData.RemoveItem(itemIndex, 1);
+        }
+    }
+
+    private void UpdateInventoryUI(Dictionary<int, InventoryItem> inventoryState)
+    {
+        inventoryPage.ResetAllItems();
+        foreach (var item in inventoryState)
+        {
+            inventoryPage.UpdateData(item.Key, item.Value.item.ItemImg, 
+                item.Value.quantity);
+        }
     }
 
     public void Update()
@@ -34,13 +87,13 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    private void InitInventoryPage()
-    {
-        inventoryPage.InitInventory(inventoryData.Size);
-        this.inventoryPage.OnDescriptionReq += HandleDescriptionReq;
-        this.inventoryPage.OnItemActionReq += HandleItemActionReq;
+    // private void InitInventoryPage()
+    // {
+    //     inventoryPage.InitInventory(inventoryData.Size);
+    //     this.inventoryPage.OnDescriptionReq += HandleDescriptionReq;
+    //     this.inventoryPage.OnItemActionReq += HandleItemActionReq;
 
-    }
+    // }
 
     private void HandleDescriptionReq(int index)
     {
@@ -53,10 +106,5 @@ public class InventoryController : MonoBehaviour
         ItemObject item = inventoryItem.item;
         inventoryPage.UpdateDescription(index, item.ItemImg, item.Name, item.Description);
     } 
-
-    private void HandleItemActionReq(int index)
-    {
-
-    }
     
 }

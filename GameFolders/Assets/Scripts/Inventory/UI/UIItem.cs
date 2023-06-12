@@ -13,7 +13,7 @@ public class UIItem : MonoBehaviour
     [SerializeField] private TMP_Text itemQuantity;
     [SerializeField] private Image selected;
 
-    public event Action<UIItem> OnItemClicked;
+    public event Action<UIItem> OnItemClicked, OnRightMouseBtnClcik;
 
     private bool empty = true;
 
@@ -51,5 +51,19 @@ public class UIItem : MonoBehaviour
     {
         OnItemClicked?.Invoke(this);
     }
+
+    public void OnPointerClick(BaseEventData pointerData)
+    {
+        PointerEventData p = (PointerEventData)pointerData;
+        if (p.button == PointerEventData.InputButton.Right)
+        {
+            OnRightMouseBtnClcik?.Invoke(this);
+        }
+        else
+        {
+            OnItemClicked?.Invoke(this);
+        }
+    }
+
 
 }

@@ -18,6 +18,12 @@ public class HealthBar : MonoBehaviour
         }
     }
 
+    public void RestoreHealth(int value)
+    {
+        GlobalVariableStorage.PlayerHealth += value;
+        UpdateHealthBar();
+    }
+
     public void ResetHealth()
     {
         GlobalVariableStorage.PlayerHealth = 100;
