@@ -15,13 +15,14 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         timer = 0;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("2") && timer > cooldown) {
+        if (Input.GetKeyDown("2") && timer > cooldown)
+        {
             GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, shootingPoint.rotation) as GameObject;
             timer = 0;
         }
