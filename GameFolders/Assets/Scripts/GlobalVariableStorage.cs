@@ -12,8 +12,8 @@ public class GlobalVariableStorage : MonoBehaviour
     public static int PlayerStarCount = 0; 
 
     public static bool Enemy1Alive = true;
-    // public static bool Enemy2Alive = true;
-    // public static bool Enemy3Alive = true;
+    public static bool Enemy2Alive = true;
+    public static bool Enemy3Alive = true;
     public static bool Star1Alive = true; 
     public static bool Star2Alive = true;
     public static bool Star3Alive = true; 
@@ -50,6 +50,14 @@ public class GlobalVariableStorage : MonoBehaviour
         if (enemyId == 1) 
         {
             return Enemy1Alive;
+        }
+        else if (enemyId == 2)
+        {
+            return Enemy2Alive;
+        }
+        else if (enemyId == 3)
+        {
+            return Enemy3Alive;
         }
         else 
         {
@@ -128,6 +136,14 @@ public class GlobalVariableStorage : MonoBehaviour
         if (enemyId == 1) 
         {
             Enemy1Alive = false;
+        }
+        else if (enemyId == 2)
+        {
+            Enemy2Alive = false;
+        }
+        else if (enemyId == 3)
+        {
+            Enemy3Alive = false;
         }
     }
 
