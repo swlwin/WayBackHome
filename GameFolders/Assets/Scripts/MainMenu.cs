@@ -18,7 +18,18 @@ public class MainMenu : MonoBehaviour
             GlobalVariableStorage.PlayerHealth = 100;
             GlobalVariableStorage.CurrentPlayerX = 0;
             GlobalVariableStorage.CurrentPlayerY = 0;
+
             GlobalVariableStorage.Potion1Collected = false;
+            GlobalVariableStorage.Potion2Collected = false;
+            GlobalVariableStorage.Potion3Collected = false;
+            GlobalVariableStorage.Potion4Collected = false;
+            GlobalVariableStorage.Potion5Collected = false;
+            GlobalVariableStorage.Potion6Collected = false;
+            GlobalVariableStorage.Potion7Collected = false;
+            GlobalVariableStorage.Potion8Collected = false;
+            GlobalVariableStorage.Potion9Collected = false;
+            GlobalVariableStorage.Potion10Collected = false;
+            
             GlobalVariableStorage.Enemy1Alive = true;
             GlobalVariableStorage.remainder = 0;
             GlobalVariableStorage.PlayerStarCount = 0;

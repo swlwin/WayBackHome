@@ -19,7 +19,7 @@ public class InventoryPage : MonoBehaviour
         itemDesc.ResetDescription();
     }
 
-    public void InitInventory(int inventorySize)
+    public void InitializeInventoryUI(int inventorySize)
     {
         for(int i = 0; i<inventorySize; i++)
         {
@@ -27,8 +27,18 @@ public class InventoryPage : MonoBehaviour
             uiItem.transform.SetParent(contentPanel, false);
             listOfItems.Add(uiItem);
             uiItem.OnItemClicked += HandleItemSelection;
+            uiItem.OnRightMouseBtnClcik += HandleShowItemActions;
         }
         
+    }
+
+    internal void ResetAllItems()
+    {
+        foreach(var item in listOfItems)
+        {
+            item.ResetData();
+            item.Deselect();
+        }
     }
 
     public void UpdateData(int index, Sprite itemImg, int itemQuan)
@@ -46,9 +56,12 @@ public class InventoryPage : MonoBehaviour
         listOfItems[index].Selected();
     }
 
-    private void HandleShowItemAction(UIItem itemUI)
+    private void HandleShowItemActions(UIItem itemUI)
     {
-
+        int index = listOfItems.IndexOf(itemUI);
+        if(index == -1)
+            return;
+        OnItemActionReq?.Invoke(index);
     }
 
     private void HandleItemSelection(UIItem itemUI)

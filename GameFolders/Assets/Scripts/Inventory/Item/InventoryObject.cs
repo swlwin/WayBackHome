@@ -50,6 +50,11 @@ public class InventoryObject : ScriptableObject
         return quantity;
     }
 
+    public void AddItem(InventoryItem item)
+    {
+        AddItem(item.item, item.quantity);
+    }
+
     public void RemoveItem(int itemIndex, int amount)
     {
         if (inventoryItems.Count > itemIndex)

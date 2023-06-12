@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83314de18414854e9077b2a1119563d, type: 3}
+  m_Name: HighGradeHPPotion
+  m_EditorClassIdentifier: 
+  <IsCountable>k__BackingField: 1
+  <MaxCount>k__BackingField: 99
+  <Name>k__BackingField: Healing Potion
+  <Description>k__BackingField: High Grade Potion to restore HP [+20]
+  <ItemImg>k__BackingField: {fileID: -7950046779126459850, guid: 140447aefe5ab6240b7562265d351154, type: 3}
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: 2ddc8384e5d38b84594401ec9c3a6a05, type: 2}
+    value: 20
+  <actionSFX>k__BackingField: {fileID: 8300000, guid: f01415d46420e0e4eb285f40bb2591d5, type: 3}

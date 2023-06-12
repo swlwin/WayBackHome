@@ -32,6 +32,15 @@ public class GlobalVariableStorage : MonoBehaviour
     public static bool Star16Alive = true;
 
     public static bool Potion1Collected = false;
+    public static bool Potion2Collected = false;
+    public static bool Potion3Collected = false;
+    public static bool Potion4Collected = false;
+    public static bool Potion5Collected = false;
+    public static bool Potion6Collected = false;
+    public static bool Potion7Collected = false;
+    public static bool Potion8Collected = false;
+    public static bool Potion9Collected = false;
+    public static bool Potion10Collected = false;
 
     public static int remainder = 0;
 
@@ -50,21 +59,67 @@ public class GlobalVariableStorage : MonoBehaviour
 
     public static bool isPotionCollected(int potionID)
     {
-            if (potionID == 1) 
-            {
-                return Potion1Collected;
-            }
-            else 
-            {
+        switch (potionID) 
+        {
+            case 1: 
+                return Potion1Collected; 
+            case 2: 
+                return Potion2Collected; 
+            case 3: 
+                return Potion3Collected; 
+            case 4: 
+                return Potion4Collected; 
+            case 5: 
+                return Potion5Collected; 
+            case 6: 
+                return Potion6Collected; 
+            case 7: 
+                return Potion7Collected; 
+            case 8: 
+                return Potion8Collected; 
+            case 9: 
+                return Potion9Collected; 
+            case 10: 
+                return Potion10Collected;
+            default:
                 return false;
-            }
+        } 
     }
 
     public static void potionCollected(int potionID)
     {
-        if (potionID == 1) 
+        switch (potionID) 
         {
-            Potion1Collected = true;
+            case 1: 
+                Potion1Collected = false; 
+                break; 
+            case 2: 
+                Potion2Collected = false; 
+                break; 
+            case 3: 
+                Potion3Collected = false; 
+                break; 
+            case 4: 
+                Potion4Collected = false; 
+                break; 
+            case 5: 
+                Potion5Collected = false; 
+                break; 
+            case 6: 
+                Potion6Collected = false; 
+                break; 
+            case 7: 
+                Potion7Collected = false; 
+                break; 
+            case 8: 
+                Potion8Collected = false; 
+                break; 
+            case 9: 
+                Potion9Collected = false; 
+                break; 
+            case 10: 
+                Potion10Collected = false; 
+                break; 
         }
     }
 
