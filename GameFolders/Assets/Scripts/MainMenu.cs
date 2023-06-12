@@ -12,6 +12,15 @@ public class MainMenu : MonoBehaviour
 
     public void SceneChange(string sceneName)
     {
+        // If player dies, reset all global variables
+        if (GlobalVariableStorage.PlayerHealth <= 0) 
+        {
+            GlobalVariableStorage.PlayerHealth = 100;
+            GlobalVariableStorage.CurrentPlayerX = 0;
+            GlobalVariableStorage.CurrentPlayerY = 0;
+
+            GlobalVariableStorage.Enemy1Alive = true;
+        }
         SceneManager.LoadScene(sceneName);
     }
 

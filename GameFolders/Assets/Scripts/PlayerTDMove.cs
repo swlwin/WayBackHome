@@ -15,6 +15,8 @@ public class PlayerTDMove : MonoBehaviour
     void Start()
     {
         sceneMusic.Play();
+        FindObjectOfType<HealthBar>().UpdateHealthBar();
+        rb.position = new Vector2(GlobalVariableStorage.CurrentPlayerX, GlobalVariableStorage.CurrentPlayerY);
     }
 
     // Update is called once per frame

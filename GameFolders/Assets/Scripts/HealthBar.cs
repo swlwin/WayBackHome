@@ -7,13 +7,12 @@ using UnityEngine.SceneManagement;
 public class HealthBar : MonoBehaviour
 {
     public Image fillBar;
-    public float health;
 
     public void LoseHealth(int value)
     {
-        health -= value;
-        fillBar.fillAmount = health/100;
-        if(health<=0)
+        GlobalVariableStorage.PlayerHealth -= value;
+        UpdateHealthBar();
+        if(GlobalVariableStorage.PlayerHealth<=0)
         {
             SceneManager.LoadScene("PlayerDefeated");
         }
@@ -21,8 +20,14 @@ public class HealthBar : MonoBehaviour
 
     public void ResetHealth()
     {
-        health = 100;
-        fillBar.fillAmount = health/100;
+        GlobalVariableStorage.PlayerHealth = 100;
+        UpdateHealthBar();
+        Debug.Log("Resetting Health");
+    }
+
+    public void UpdateHealthBar()
+    {
+        fillBar.fillAmount = GlobalVariableStorage.PlayerHealth/100;
     }
 
     private void Update()

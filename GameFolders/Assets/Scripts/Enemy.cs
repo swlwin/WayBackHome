@@ -18,9 +18,19 @@ public class Enemy : MonoBehaviour
     public PlayerTDMove playerMovement;
     bool countdown = false;
 
+    public int EnemyId;
+
     private void Reset()
     {
         Init();
+    }
+
+    public void Start() 
+    {
+        if (!GlobalVariableStorage.IsEnemyAlive(EnemyId))
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void Init()
@@ -96,6 +106,8 @@ public class Enemy : MonoBehaviour
         if (timeLeft < 0)
         {
             playerMovement.enabled = true;
+            GlobalVariableStorage.CurrentPlayerX = GameObject.FindGameObjectWithTag("Player").transform.position.x;
+            GlobalVariableStorage.CurrentPlayerY = GameObject.FindGameObjectWithTag("Player").transform.position.y;
             SceneManager.LoadScene(sceneName);
         }
     }

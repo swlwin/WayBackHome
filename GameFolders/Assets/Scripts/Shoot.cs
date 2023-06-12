@@ -8,12 +8,13 @@ public class Shoot : MonoBehaviour
     public Transform shootingPoint;
     public GameObject bulletPrefab;
 
-    public float timer;
+    private float timer;
     public float cooldown;
 
     // Start is called before the first frame update
     void Start()
     {
+        timer = 0;
         
     }
 

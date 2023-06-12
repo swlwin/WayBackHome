@@ -42,6 +42,7 @@ public class PlayerControls : MonoBehaviour
         availJumps = totalJumps;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        FindObjectOfType<HealthBar>().UpdateHealthBar();
     }
 
     // Update is called once per frame

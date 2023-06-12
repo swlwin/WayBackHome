@@ -8,6 +8,7 @@ public class EnemyHealthBar : MonoBehaviour
 {
     public Image fillBar;
     public float health;
+    public int EnemyId;
 
     public void LoseHealth(int value)
     {
@@ -15,6 +16,7 @@ public class EnemyHealthBar : MonoBehaviour
         fillBar.fillAmount = health/100;
         if(health<=0)
         {
+            GlobalVariableStorage.KillEnemy(EnemyId);
             SceneManager.LoadScene("BossDefeated");
         }
     }

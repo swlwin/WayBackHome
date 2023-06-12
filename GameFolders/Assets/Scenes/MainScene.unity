@@ -1261,6 +1261,7 @@ MonoBehaviour:
   sceneName: Combat
   timeLeft: 1.5
   playerMovement: {fileID: 1174934737}
+  EnemyId: 1
 --- !u!95 &1057370772
 Animator:
   serializedVersion: 5
@@ -5668,7 +5669,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillBar: {fileID: 219235379}
-  health: 100
 --- !u!1 &1266459407
 GameObject:
   m_ObjectHideFlags: 0
