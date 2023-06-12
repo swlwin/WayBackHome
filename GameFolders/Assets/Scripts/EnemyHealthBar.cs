@@ -17,7 +17,10 @@ public class EnemyHealthBar : MonoBehaviour
         if(health<=0)
         {
             GlobalVariableStorage.KillEnemy(EnemyId);
-            SceneManager.LoadScene("BossDefeated");
+            if (EnemyId == 1)
+            {
+                SceneManager.LoadScene("DinoDefeated");
+            }
         }
     }
     
