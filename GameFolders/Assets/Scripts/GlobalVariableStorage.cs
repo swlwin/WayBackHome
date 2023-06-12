@@ -12,6 +12,10 @@ public class GlobalVariableStorage : MonoBehaviour
 
     public static bool Enemy1Alive = true;
 
+    public static bool Potion1Collected = false;
+
+    public static int remainder = 0;
+
 
     public static bool IsEnemyAlive(int enemyId) 
     {
@@ -22,6 +26,26 @@ public class GlobalVariableStorage : MonoBehaviour
         else 
         {
             return true;
+        }
+    }
+
+    public static bool isPotionCollected(int potionID)
+    {
+            if (potionID == 1) 
+            {
+                return Potion1Collected;
+            }
+            else 
+            {
+                return false;
+            }
+    }
+
+    public static void potionCollected(int potionID)
+    {
+        if (potionID == 1) 
+        {
+            Potion1Collected = true;
         }
     }
 

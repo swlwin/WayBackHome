@@ -9,9 +9,6 @@ public class InventoryPage : MonoBehaviour
     [SerializeField] private RectTransform contentPanel;
     [SerializeField] private InventoryDescription itemDesc;
 
-    // public Sprite tempImg;
-    // public int quan;
-    // public string name, desc;
     public event Action<int> OnDescriptionReq, OnItemActionReq;
     
     List<UIItem> listOfItems = new List<UIItem>();
@@ -42,6 +39,13 @@ public class InventoryPage : MonoBehaviour
         }
     }
 
+    internal void UpdateDescription(int index, Sprite itemImage, string name, string description)
+    {
+        itemDesc.SetDescription(itemImage, name, description);
+        DeselectAllItems();
+        listOfItems[index].Selected();
+    }
+
     private void HandleShowItemAction(UIItem itemUI)
     {
 
@@ -63,7 +67,7 @@ public class InventoryPage : MonoBehaviour
         ResetSelection();
     }
 
-    private void ResetSelection()
+    public void ResetSelection()
     {
         itemDesc.ResetDescription();
         DeselectAllItems();
