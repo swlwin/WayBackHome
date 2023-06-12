@@ -21,6 +21,14 @@ public class EnemyHealthBar : MonoBehaviour
             {
                 SceneManager.LoadScene("DinoDefeated");
             }
+            else if (EnemyId == 2)
+            {
+                SceneManager.LoadScene("DogDefeated");
+            }
+            else if (EnemyId == 3)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
     
