@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu]
+
 public class ItemObject : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [field: SerializeField] public bool IsCountable {get; set;}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int ID => GetInstanceID();
+
+    [field:SerializeField] public int MaxCount {get; set;} = 1;
+    [field:SerializeField] public string Name {get; set;} 
+    [field:SerializeField] [field: TextArea] public string Description {get; set;}
+    [field:SerializeField] public Sprite ItemImg {get; set;}
 }
