@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac067db948635de469bf9ea6e01b1c7a, type: 3}
+  m_Name: HealthPotion_Mid
+  m_EditorClassIdentifier: 
+  <IsCountable>k__BackingField: 1
+  <MaxCount>k__BackingField: 99
+  <Name>k__BackingField: Healing Potion
+  <Description>k__BackingField: Normal Healing Potion to restore HP. [+ 10]
+  <ItemImg>k__BackingField: {fileID: 5845185198968618096, guid: 140447aefe5ab6240b7562265d351154, type: 3}
