@@ -14,6 +14,7 @@ public class GlobalVariableStorage : MonoBehaviour
     public static bool Enemy1Alive = true;
     public static bool Enemy2Alive = true;
     public static bool Enemy3Alive = true;
+    
     public static bool Star1Alive = true; 
     public static bool Star2Alive = true;
     public static bool Star3Alive = true; 

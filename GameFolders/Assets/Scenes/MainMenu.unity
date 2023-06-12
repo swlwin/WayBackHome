@@ -985,6 +985,11 @@ MonoBehaviour:
 
     Shoot: 2
 
+    Left Click: Select
+
+    Right Click: Use/Drink Potion
+
+
 
 '
   m_isRightToLeft: 0
@@ -1013,7 +1018,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.75
+  m_fontSize: 26.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1049,7 +1054,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -281.04938, y: -164.20862, z: -129.47215, w: 25.262823}
+  m_margin: {x: -301.12787, y: -164.20862, z: -129.47215, w: -0.55235}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

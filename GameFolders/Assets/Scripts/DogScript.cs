@@ -23,7 +23,7 @@ public class DogScript : MonoBehaviour
     void Start()
     {
         alive = true;
-        speed = 5.0f;
+        speed = 4.0f;
         // range = 4.0f;
         cooldown = 1.5f;
         attackTime = 0.5f;
