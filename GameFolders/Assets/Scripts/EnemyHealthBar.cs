@@ -16,7 +16,6 @@ public class EnemyHealthBar : MonoBehaviour
         fillBar.fillAmount = health/100;
         if(health<=0)
         {
-            GlobalVariableStorage.PlayerStarCount += 9; 
             GlobalVariableStorage.KillEnemy(EnemyId);
             SceneManager.LoadScene("BossDefeated");
         }

@@ -61,9 +61,9 @@ public class PlayerTDMove : MonoBehaviour
         if(collision.gameObject.CompareTag("Door")) 
         {
             Debug.Log("Collide with Door");
-            if (GlobalVariableStorage.PlayerStarCount < 17)
+            if (GlobalVariableStorage.PlayerStarCount < 3 && (!GlobalVariableStorage.Enemy1Alive))
             {
-                Debug.Log("Not enough Stars");
+                Debug.Log("Not Enough Stars or Enemies Still Alive");
                 Debug.Log("Current Stars: " + GlobalVariableStorage.PlayerStarCount);
             }
             else 

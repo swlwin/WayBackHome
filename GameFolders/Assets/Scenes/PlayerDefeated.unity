@@ -683,8 +683,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The boss has bested Miu. Try again to defeat the boss in order to gain
-    the necessary memory to continue Miu's adventure.
+  m_text: Miu has been bested. Sadly, Miu's journey had ended before all of his memory
+    was regained. Try again to complete the journey and find Mui's way back home!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
