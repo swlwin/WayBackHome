@@ -8,6 +8,7 @@ TagManager:
   - Star
   - Enemy
   - Ground
+  - Door
   layers:
   - Default
   - TransparentFX

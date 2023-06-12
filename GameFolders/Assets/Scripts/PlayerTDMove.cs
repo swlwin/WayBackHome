@@ -12,6 +12,7 @@ public class PlayerTDMove : MonoBehaviour
     public AudioSource sceneMusic;
     public GameObject alertPopup;
 
+
     void Start()
     {
         sceneMusic.Play();
@@ -48,7 +49,27 @@ public class PlayerTDMove : MonoBehaviour
             Invoke("closealert", 2f);
            
         }
-            
-    }
+        if(collision.gameObject.CompareTag("Star"))
+        {
+            Destroy(collision.gameObject);
+            GlobalVariableStorage.PlayerStarCount++;
+        }
+    } 
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Door")) 
+        {
+            Debug.Log("Collide with Door");
+            if (GlobalVariableStorage.PlayerStarCount < 17)
+            {
+                Debug.Log("Not enough Stars");
+                Debug.Log("Current Stars: " + GlobalVariableStorage.PlayerStarCount);
+            }
+            else 
+            {
+                Destroy(collision.gameObject);
+            }
+        }
+    }
 }

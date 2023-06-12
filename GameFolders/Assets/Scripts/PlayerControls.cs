@@ -22,7 +22,7 @@ public class PlayerControls : MonoBehaviour
     int availJumps;
     bool multiJumps;
     bool isDead = false;
-    
+        
     //Public Fields
     public float speed = 4;
     public float jumpForce = 11;
@@ -194,6 +194,8 @@ public class PlayerControls : MonoBehaviour
         transform.position = new Vector2(0f,0f);
         isDead = true;
     }
+
+    
 
     IEnumerator attack()
     {
