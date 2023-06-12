@@ -49,10 +49,6 @@ public class UIItem : MonoBehaviour
 
     public void OnMouseDown()
     {
-        // if(empty)
-        // {
-        //     return;
-        // }
         OnItemClicked?.Invoke(this);
     }
 
