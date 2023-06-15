@@ -3693,6 +3693,18 @@ MonoBehaviour:
   inventoryPage: {fileID: 720467273}
   inventoryData: {fileID: 11400000, guid: 317b6abc2e83a0c4bbfe7726f4efb850, type: 2}
   initialItem:
+  - quantity: 1
+    item: {fileID: 11400000, guid: 382c4df21734a43458804ca9a83025cf, type: 2}
+  - quantity: 2
+    item: {fileID: 11400000, guid: 382c4df21734a43458804ca9a83025cf, type: 2}
+  - quantity: 2
+    item: {fileID: 11400000, guid: 382c4df21734a43458804ca9a83025cf, type: 2}
+  - quantity: 2
+    item: {fileID: 11400000, guid: 382c4df21734a43458804ca9a83025cf, type: 2}
+  - quantity: 2
+    item: {fileID: 11400000, guid: 382c4df21734a43458804ca9a83025cf, type: 2}
+  - quantity: 2
+    item: {fileID: 11400000, guid: 382c4df21734a43458804ca9a83025cf, type: 2}
   - quantity: 2
     item: {fileID: 11400000, guid: 382c4df21734a43458804ca9a83025cf, type: 2}
 --- !u!114 &1174934745

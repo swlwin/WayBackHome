@@ -31,9 +31,12 @@ public class MainMenu : MonoBehaviour
             GlobalVariableStorage.Potion10Collected = false;
             
             GlobalVariableStorage.Enemy1Alive = true;
-            GlobalVariableStorage.remainder = 0;
+            GlobalVariableStorage.Enemy2Alive = true;
+            GlobalVariableStorage.Enemy3Alive = true;
+            
             GlobalVariableStorage.PlayerStarCount = 0;
         }
+      
         SceneManager.LoadScene(sceneName);
     }
 

@@ -22,6 +22,10 @@ public class HealthBar : MonoBehaviour
     {
         GlobalVariableStorage.PlayerHealth += value;
         UpdateHealthBar();
+        if(GlobalVariableStorage.PlayerHealth<=0)
+        {
+            SceneManager.LoadScene("PlayerDefeated");
+        }
     }
 
     public void ResetHealth()

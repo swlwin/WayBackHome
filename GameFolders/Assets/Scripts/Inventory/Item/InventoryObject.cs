@@ -30,21 +30,6 @@ public class InventoryObject : ScriptableObject
 
     public int AddItem(ItemObject item, int quantity)
     {
-        if(item.IsCountable == false)
-        {   
-            for(int i = 0; i < inventoryItems.Count; i++)
-            {
-                if(IsInventoryFull())
-                    return quantity;
-                while(quantity > 0 && IsInventoryFull() == false)
-                {
-                    quantity -= AddNonStackableItem(item, 1); 
-                    quantity--;
-                }
-                InformAboutChange();
-                return quantity;
-            }
-        }
         quantity = AddStackableItem(item, quantity);
         InformAboutChange();
         return quantity;
@@ -105,25 +90,6 @@ public class InventoryObject : ScriptableObject
                 AddItemToFirstFreeSlot(item, newQuantity);
             }
             return quantity;
-    }
-
-    private int AddNonStackableItem(ItemObject item, int quantity)
-    {
-        InventoryItem newItem = new InventoryItem
-        {
-            item = item,
-            quantity = quantity
-        };
-
-        for(int i = 0; i < inventoryItems.Count; i++)
-        {
-            if(inventoryItems[i].isEmpty)
-            {
-                inventoryItems[i] = newItem;
-                return quantity;
-            }
-        }
-        return 0;
     }
 
     private int AddItemToFirstFreeSlot(ItemObject item, int quantity)

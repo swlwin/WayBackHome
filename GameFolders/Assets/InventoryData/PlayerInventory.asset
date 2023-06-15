@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryItems:
   - quantity: 1
-    item: {fileID: 11400000, guid: c2d9bb1f9fc87a044bd6c24f739227c4, type: 2}
-  - quantity: 0
+    item: {fileID: 11400000, guid: ea2a1b8bf629dd24bab145b743ba19ad, type: 2}
+  - quantity: 1
+    item: {fileID: 11400000, guid: ea2a1b8bf629dd24bab145b743ba19ad, type: 2}
+  - quantity: 1
     item: {fileID: 0}
-  - quantity: 0
+  - quantity: 1
     item: {fileID: 0}
-  - quantity: 0
+  - quantity: 1
     item: {fileID: 0}
-  - quantity: 0
+  - quantity: 1
     item: {fileID: 0}
-  - quantity: 0
+  - quantity: 1
     item: {fileID: 0}
-  - quantity: 0
-    item: {fileID: 0}
-  - quantity: 0
+  - quantity: 1
     item: {fileID: 0}
   <Size>k__BackingField: 8

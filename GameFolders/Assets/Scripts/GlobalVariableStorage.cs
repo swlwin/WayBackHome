@@ -43,9 +43,6 @@ public class GlobalVariableStorage : MonoBehaviour
     public static bool Potion9Collected = false;
     public static bool Potion10Collected = false;
 
-    public static int remainder = 0;
-
-
     public static bool IsEnemyAlive(int enemyId) 
     {
         if (enemyId == 1) 
