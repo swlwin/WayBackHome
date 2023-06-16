@@ -27,7 +27,7 @@ public class EnemyHealthBar : MonoBehaviour
             }
             else if (EnemyId == 3)
             {
-                SceneManager.LoadScene("GameOver");
+                SceneManager.LoadScene("EagleDefeated");
             }
         }
     }

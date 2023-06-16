@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GlobalVariableStorage : MonoBehaviour
 {
-
+    public static List<InventoryItem> inventoryItems = new List<InventoryItem>();
+    public static bool popupopen = true;
     public static float PlayerHealth = 100f;
 
     public static float CurrentPlayerX = 0;
@@ -100,34 +101,34 @@ public class GlobalVariableStorage : MonoBehaviour
         switch (potionID) 
         {
             case 1: 
-                Potion1Collected = false; 
+                Potion1Collected = true; 
                 break; 
             case 2: 
-                Potion2Collected = false; 
+                Potion2Collected = true; 
                 break; 
             case 3: 
-                Potion3Collected = false; 
+                Potion3Collected = true; 
                 break; 
             case 4: 
-                Potion4Collected = false; 
+                Potion4Collected = true; 
                 break; 
             case 5: 
-                Potion5Collected = false; 
+                Potion5Collected = true; 
                 break; 
             case 6: 
                 Potion6Collected = false; 
                 break; 
             case 7: 
-                Potion7Collected = false; 
+                Potion7Collected = true; 
                 break; 
             case 8: 
-                Potion8Collected = false; 
+                Potion8Collected = true; 
                 break; 
             case 9: 
-                Potion9Collected = false; 
+                Potion9Collected = true; 
                 break; 
             case 10: 
-                Potion10Collected = false; 
+                Potion10Collected = true; 
                 break; 
         }
     }

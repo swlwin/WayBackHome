@@ -8,15 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 8880ad021df3329479fc2c271d2a7ce4
-  - enabled: 0
-    path: Assets/Scenes/MainScene2.unity
-    guid: d5494888af2902249a1dd817e28b420b
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: c2a5015cbdc344d439a0d9b52c8c62fb
-  - enabled: 1
-    path: Assets/Scenes/Combat.unity
-    guid: d349a35de18f6bc45b69418adf6dd5c1
   - enabled: 1
     path: Assets/Scenes/PlayerDefeated.unity
     guid: a702dbade1f0c5146a07ef8e7c01b6e2
@@ -33,9 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/EagleCombat.unity
     guid: cd4a808ce5dde864aa00f1363830bc66
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: 3a5e13ae2f32fca428e79ef94e6199d6
-  - enabled: 1
     path: Assets/Scenes/DogDefeated.unity
     guid: 8057130fbb0300f4485f029691d1f919
+  - enabled: 1
+    path: Assets/Scenes/EagleDefeated.unity
+    guid: a87cf37066f948949902f5b151f2c6f0
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 3a5e13ae2f32fca428e79ef94e6199d6
   m_configObjects: {}

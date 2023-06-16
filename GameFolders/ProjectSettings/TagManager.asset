@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - Ground
   - Door
+  - Tunnel
+  - Final
+  - Family
   layers:
   - Default
   - TransparentFX
@@ -45,6 +48,9 @@ TagManager:
   m_SortingLayers:
   - name: Back
     uniqueID: 51644639
+    locked: 0
+  - name: Back2
+    uniqueID: 1790579475
     locked: 0
   - name: Entity
     uniqueID: 2142999491

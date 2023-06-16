@@ -29,12 +29,50 @@ public class MainMenu : MonoBehaviour
             GlobalVariableStorage.Potion8Collected = false;
             GlobalVariableStorage.Potion9Collected = false;
             GlobalVariableStorage.Potion10Collected = false;
+
+            GlobalVariableStorage.Star1Alive = true;
+            GlobalVariableStorage.Star2Alive = true;
+            GlobalVariableStorage.Star3Alive = true;
+            GlobalVariableStorage.Star4Alive = true;
+            GlobalVariableStorage.Star5Alive = true;
+            GlobalVariableStorage.Star6Alive = true;
+            GlobalVariableStorage.Star7Alive = true;
+            GlobalVariableStorage.Star8Alive = true;
+            GlobalVariableStorage.Star9Alive = true;
+            GlobalVariableStorage.Star10Alive = true;
+            GlobalVariableStorage.Star11Alive = true;
+            GlobalVariableStorage.Star12Alive = true;
+            GlobalVariableStorage.Star13Alive = true;
+            GlobalVariableStorage.Star14Alive = true;
+            GlobalVariableStorage.Star15Alive = true;
+            GlobalVariableStorage.Star16Alive = true;
             
             GlobalVariableStorage.Enemy1Alive = true;
+            GlobalVariableStorage.Enemy2Alive = true;
+            GlobalVariableStorage.Enemy3Alive = true;
+            
             GlobalVariableStorage.remainder = 0;
             GlobalVariableStorage.PlayerStarCount = 0;
+
+            GlobalVariableStorage.inventoryItems.Clear();
+            GlobalVariableStorage.popupopen = true;
         }
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void DinoDefeated()
+    {
+        GlobalVariableStorage.PlayerStarCount += 5;
+    }
+    
+    public void DogDefeated()
+    {
+        GlobalVariableStorage.PlayerStarCount += 10;
+    }
+
+    public void EagleDefeated()
+    {
+        GlobalVariableStorage.PlayerStarCount += 15;
     }
 
     public void QuitApp()

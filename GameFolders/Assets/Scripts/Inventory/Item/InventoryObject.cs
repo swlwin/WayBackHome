@@ -8,15 +8,14 @@ using UnityEngine;
 
 public class InventoryObject : ScriptableObject
 {
-    [SerializeField] private List<InventoryItem> inventoryItems;
-
+    
+    private List<InventoryItem> inventoryItems => GlobalVariableStorage.inventoryItems;
     [field: SerializeField] public int Size {get; private set;} = 8;
 
     public event Action<Dictionary<int, InventoryItem>> OnInventoryUpdated;
 
     public void Initialize()
     {
-        inventoryItems = new List<InventoryItem>();
         for(int i = 0; i< Size; i++)
         {
             inventoryItems.Add(InventoryItem.GetEmptyItem());
